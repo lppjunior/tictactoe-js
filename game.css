@@ -1,0 +1,72 @@
+html, body {
+	background-color:#212121;
+	color:#fff;
+	font-family:arial,helvetica;
+}
+a  {
+	color: #fff;
+	text-decoration: none;
+}
+a:hover  {
+	color: #A4A4A4;
+}
+
+h1, h2, p {
+	text-align: center;
+}
+
+h1 { margin: 0 0 20px 0; }
+
+#infornations {
+	float: right;
+	margin-left: 30px;
+	padding: 20px 0;
+	width: 300px;
+	background-color: #000;
+	text-align: center;
+	-moz-border-radius-bottomleft: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+}
+
+#infornations select {
+	margin: 0 0 10px 0;
+	padding: 5px;
+}
+#infornations input[type=button] {
+	cursor: pointer;
+	margin-top: 12px;
+	background: transparent url(button.png) no-repeat top left;
+	width: 274px; height: 51px;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+	border: none;
+}
+#infornations input:hover {
+	background-position: 0 -49px;
+}
+
+#tictactoe {
+	margin: 0 auto;
+	width: 760px;
+}
+
+#tictactoe table {
+	background: transparent url(grid.png) no-repeat center center;
+}
+
+#tictactoe td {
+	width: 150px; height: 150px;
+	cursor: pointer;
+}
+
+#tictactoe td.cross, #tictactoe td.circle, #tictactoe td.cross, #tictactoe td.circle {
+	background: transparent url(pics.png) no-repeat; 
+}
+
+#tictactoe td.cross { background-position: 0 -150px; }
+#tictactoe td.circle { background-position: 0 0; }
+#tictactoe td.cross.victory { background-position: -150px -150px; }
+#tictactoe td.circle.victory { background-position: -150px 0; }
