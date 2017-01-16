@@ -1,0 +1,10 @@
+{
+  "name": "tictactoe",
+  "version": "0.0.2",
+  "description": "Game tictactoe with jQuery",
+  "author": "Luiz Paulo (@lppjunior)",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "~3.1.1"
+  }
+}
