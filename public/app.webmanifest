@@ -1,0 +1,24 @@
+{
+  "lang": "pt-BR",
+  "name": "VTicTacToe - Game",
+  "short_name": "TicTacToe - Game",
+  "description": "Implementação do famoso jogo da velha em Javascript.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#000",
+  "background_color": "#000",
+  "icons": [
+    {
+      "src": "/favicon/favicon-192.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "/favicon/favicon-512.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "maskable"
+    }
+  ]
+}
