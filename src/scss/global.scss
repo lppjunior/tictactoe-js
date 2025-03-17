@@ -32,7 +32,7 @@ body {
 	margin: 40px 20px;
 	h1 {
 		font-size: 60px;
-		margin: 100px 0;
+		margin: 95px 0;
 	}
 	select {
 		background-color: #000;
@@ -74,6 +74,13 @@ body {
 table {
 	background: transparent url(../assets/imgs/grid.png) no-repeat center center;
 }
+td.cross,
+td.circle,
+td.cross,
+td.circle {
+	background: transparent url(../assets/imgs/pics.png) no-repeat;
+}
+
 td {
 	width: 150px;
 	height: 150px;
@@ -90,10 +97,4 @@ td {
 			background-position: -150px 0;
 		}
 	}
-}
-td.cross,
-td.circle,
-td.cross,
-td.circle {
-	background: transparent url(../assets/imgs/pics.png) no-repeat;
 }

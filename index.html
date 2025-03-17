@@ -26,7 +26,7 @@
 
     <!-- GOOGLE -->
     <meta name="rating" content="General" />
-    <meta name="robots" content="index,follow" />
+    <meta name="roRobôs" content="index,follow" />
     <link
       rel="sitemap"
       type="application/xml"
@@ -72,25 +72,32 @@
   </head>
 
   <body>
-		<div class="box form">
-			<h1>Jogo da velha</h1>
+    <div id="app" class="wrapper">
+      <div class="box form">
+        <h1>Jogo da velha</h1>
 
-			<form id="makeInstance">
-				<select name="enemy">
-					<option value="user">Usuário</option>
-					<option value="computer" selected>Computador</option>
-				</select>
+        <form id="makeInstance">
+          Jogador 1
+          <select name="user_1">
+            <option value="USER" selected>Usuário</option>
+            <option value="EASY_BOT">Robô Fácil</option>
+            <option value="MEDIUM_BOT">Robô Médio</option>
+            <option value="HARD_BOT">Robô Difícil</option>
+          </select>
 
-				<select name="level">
-					<option value="easy">Fácil</option>
-					<option value="medium">Médio</option>
-					<option value="hard" selected>Difícil</option>
-				</select>
+          Jogador 2
+          <select name="user_2">
+            <option value="USER">Usuário</option>
+            <option value="EASY_BOT">Robô Fácil</option>
+            <option value="MEDIUM_BOT">Robô Médio</option>
+            <option value="HARD_BOT" selected>Robô Difícil</option>
+          </select>
 
-				<input type="submit" value="JOGAR">
-			</form>
-		</div>
+          <input type="submit" value="JOGAR">
+        </form>
+      </div>
+    </div>
   </body>
 
-  <script type="module" src="src/js/index.js"></script>
+  <script type="module" src="src/index.js"></script>
 </html>

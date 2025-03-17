@@ -3,7 +3,19 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
 >
   <url>
-    <loc>https://vite-vanilla-js.d1a.app/</loc>
+    <loc>https://lppjunior.com</loc>
+    <lastmod>2023-06-10T19:40:55+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://resume.lppjunior.com</loc>
+    <lastmod>2023-06-10T19:40:55+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://tictactoe.lppjunior.com</loc>
+    <lastmod>2023-06-10T19:40:55+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://minefield.lppjunior.com</loc>
     <lastmod>2023-06-10T19:40:55+00:00</lastmod>
   </url>
 </urlset>
