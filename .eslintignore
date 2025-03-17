@@ -11,12 +11,9 @@
 
 # production
 /dist
-/dist-ssr
 
 # various
-/playwright-report
-TODO.md
-OLD_README.md
+high-level-dependencies.html
 
 # misc
 .DS_Store
@@ -31,12 +28,5 @@ yarn-error.log*
 # local env files
 .env*.local
 
-# editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# vercel
+.vercel

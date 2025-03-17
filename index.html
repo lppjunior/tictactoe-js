@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ESSENTIAL -->
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- GENERAL -->
+    <title>TicTacToe - Game</title>
+    <meta name="title" content="TicTacToe - Game" />
+    <meta name="application-name" content="TicTacToe - Game" />
+    <meta
+      name="description"
+      content="Implementação do famoso jogo da velha em Javascript."
+    />
+    <meta
+      name="keywords"
+      content="
+        tictactoe, jogo da velha, javascript, code
+      "
+    />
+    <link rel="manifest" href="/app.webmanifest" />
+    <link rel="icon" sizes="192x192" href="/favicon/favicon-192.webp" />
+    <link rel="icon" sizes="512x512" href="/favicon/favicon-512.webp" />
+
+    <!-- GOOGLE -->
+    <meta name="rating" content="General" />
+    <meta name="roRobôs" content="index,follow" />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="/sitemap.xml"
+    />
+    <!-- <meta
+      name="google-site-verification"
+      content="43hCqye5FYTS4SnBMPKNFP-wBhfLHwRBykWJF1WJawo"
+    /> -->
+
+    <!-- FACEBOOK -->
+    <meta property="og:url" content="https://tictactoe.lppjunior.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TicTacToe - Game" />
+    <meta
+      property="og:description"
+      content="Start a Vanilla JavaScript App, SPA, landing page or website using Vite, SASS / SCSS, Tailwind CSS and much more, in just 30 seconds."
+    />
+    <meta property="og:image" content="/og.jpg" />
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="tictactoe.lppjunior.com" />
+    <meta property="twitter:url" content="https://tictactoe.lppjunior.com" />
+    <meta name="twitter:title" content="TicTacToe - Game" />
+    <meta
+      name="twitter:description"
+      content="Start a Vanilla JavaScript App, SPA, landing page or website using Vite, SASS / SCSS, Tailwind CSS and much more, in just 30 seconds."
+    />
+    <meta name="twitter:image" content="/og.jpg" />
+
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="/favicon/favicon-512.webp" />
+    <link rel="mask-icon" href="/favicon/favicon-512.webp" color="black" />
+    <meta name="apple-mobile-web-app-title" content="Vite ThreeJS — Template" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <!-- ANDROID -->
+    <meta name="theme-color" content="#000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+  </head>
+
+  <body>
+    <div id="app" class="wrapper">
+      <div class="box form">
+        <h1>Jogo da velha</h1>
+
+        <form id="makeInstance">
+          Jogador 1
+          <select name="user_1">
+            <option value="USER" selected>Usuário</option>
+            <option value="EASY_BOT">Robô Fácil</option>
+            <option value="MEDIUM_BOT">Robô Médio</option>
+            <option value="HARD_BOT">Robô Difícil</option>
+          </select>
+
+          Jogador 2
+          <select name="user_2">
+            <option value="USER">Usuário</option>
+            <option value="EASY_BOT">Robô Fácil</option>
+            <option value="MEDIUM_BOT">Robô Médio</option>
+            <option value="HARD_BOT" selected>Robô Difícil</option>
+          </select>
+
+          <input type="submit" value="JOGAR">
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script type="module" src="src/index.js"></script>
+</html>
