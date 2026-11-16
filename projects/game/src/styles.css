@@ -63,13 +63,6 @@ button:focus-visible {
   padding: 54px 0 60px;
 }
 
-.app--idle .game-layout {
-  min-height: 100dvh;
-  grid-auto-rows: auto;
-  align-content: center;
-  padding: 18px 0 54px;
-}
-
 .setup-card,
 .game-card {
   min-height: 500px;
