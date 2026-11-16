@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import chooseMove from '../bot'
-import Tictactoe from '../tictactoe'
-import { PLAYER, STATUS } from '../tictactoe/constants'
+import chooseMove from '@tictactoe/bot'
+import Tictactoe, { PLAYER, STATUS } from '@tictactoe/main'
 
 const DIFFICULTIES = [
   { value: 'easy', label: 'Fácil' },

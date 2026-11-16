@@ -1,4 +1,4 @@
-import { Bot, Tictactoe } from '../index'
+import { Tictactoe } from './index'
 import { EVENT, PLAYER, STATUS } from './constants'
 
 function playMoves (game, moves) {
@@ -98,9 +98,5 @@ describe('Tictactoe', () => {
     game.start()
     expect(game.getState().checked).toBe(0)
     expect(game.getState().status).toBe(STATUS.PLAYING)
-  })
-
-  test('exports the bot through the public entry point', () => {
-    expect(Bot(['', '', '', '', '', '', '', '', ''], PLAYER.O, 'easy', () => 0)).toBe(0)
   })
 })

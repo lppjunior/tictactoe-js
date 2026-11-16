@@ -2,9 +2,9 @@ module.exports = {
   clearMocks: true,
   collectCoverage: true,
   collectCoverageFrom: [
-    'src/bot/index.js',
-    'src/tictactoe/Tictactoe.js',
-    'src/tictactoe/use-cases/index.js'
+    'projects/bot/src/index.js',
+    'projects/main/src/Tictactoe.js',
+    'projects/main/src/use-cases/index.js'
   ],
   coverageDirectory: 'coverage',
   coverageThreshold: {

@@ -1,4 +1,4 @@
-import { dirname } from 'node:path'
+import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import react from '@vitejs/plugin-react'
 import { defineConfig, loadEnv } from 'vite'
@@ -43,5 +43,9 @@ export default defineConfig(({ mode, command }) => {
     }
   }
 
-  return { plugins: [react(), gtm] }
+  return {
+    root,
+    plugins: [react(), gtm],
+    build: { outDir: resolve(root, '../../dist'), emptyOutDir: true }
+  }
 })

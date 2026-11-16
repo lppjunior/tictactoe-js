@@ -1,4 +1,4 @@
-import { PLAYER } from '../tictactoe/constants'
+import { PLAYER } from '@tictactoe/main'
 
 const WINNING_LINES = [
   [0, 1, 2],

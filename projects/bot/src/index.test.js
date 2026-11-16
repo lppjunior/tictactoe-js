@@ -1,5 +1,5 @@
-import { Bot } from '../index'
-import { PLAYER } from '../tictactoe/constants'
+import { Bot } from '../../../index'
+import { PLAYER } from '@tictactoe/main'
 
 const EMPTY_BOARD = ['', '', '', '', '', '', '', '', '']
 

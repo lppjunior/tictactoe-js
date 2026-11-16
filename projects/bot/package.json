@@ -1,0 +1,16 @@
+{
+  "name": "@tictactoe/bot",
+  "version": "0.0.3",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest --config ../../jest.config.js --runInBand --coverage=false --runTestsByPath src/index.test.js",
+    "lint": "standard src"
+  },
+  "dependencies": {
+    "@tictactoe/main": "0.0.3"
+  },
+  "standard": {
+    "env": ["jest"]
+  }
+}
