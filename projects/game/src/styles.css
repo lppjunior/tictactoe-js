@@ -50,12 +50,12 @@ button:focus-visible {
 
 .game-layout {
   display: grid;
-  width: min(1220px, calc(100% - 48px));
+  width: calc(100% - 48px);
   flex: 1;
-  grid-template-areas: 'games setup';
-  grid-template-columns: minmax(0, 1fr) 360px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   align-content: start;
-  gap: 30px;
+  align-items: start;
+  gap: 24px;
   margin: 0 auto;
   padding: 54px 0 36px;
 }
@@ -63,7 +63,6 @@ button:focus-visible {
 .app--idle .game-layout {
   width: min(360px, calc(100% - 32px));
   min-height: calc(100vh - 78px);
-  grid-template-areas: 'setup';
   grid-template-columns: minmax(0, 1fr);
   align-content: center;
   justify-content: center;
@@ -79,7 +78,6 @@ button:focus-visible {
 }
 
 .setup-card {
-  grid-area: setup;
   align-self: start;
   overflow: hidden;
   padding: 22px;
@@ -263,15 +261,7 @@ button:focus-visible {
 }
 
 .games-column {
-  grid-area: games;
-  min-width: 0;
-}
-
-.games-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 285px), 1fr));
-  align-items: start;
-  gap: 18px;
+  display: contents;
 }
 
 .game-card {
@@ -431,21 +421,12 @@ button:focus-visible {
 
 @media (max-width: 860px) {
   .game-layout {
-    grid-template-areas:
-      'setup'
-      'games';
-    grid-template-columns: minmax(0, 1fr);
     gap: 22px;
   }
 
   .app--idle .game-layout {
     width: min(360px, calc(100% - 28px));
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .setup-card {
-    width: min(100%, 480px);
-    justify-self: center;
   }
 }
 
@@ -457,18 +438,11 @@ button:focus-visible {
 
   .app--idle .game-layout {
     width: min(360px, calc(100% - 28px));
-  }
-
-  .app--idle .game-layout {
     min-height: calc(100vh - 62px);
   }
 
   .setup-card {
     padding: 18px;
-  }
-
-  .games-grid {
-    grid-template-columns: minmax(0, 1fr);
   }
 
   .game-card-content {
