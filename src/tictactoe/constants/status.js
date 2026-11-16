@@ -1,0 +1,4 @@
+export const STATUS = {
+  PLAYING: 'PLAYING',
+  FINISHED: 'FINISHED'
+}
