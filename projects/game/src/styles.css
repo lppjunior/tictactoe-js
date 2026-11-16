@@ -78,6 +78,8 @@ button:focus-visible {
 }
 
 .setup-card {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   padding: 22px;
 }
@@ -138,6 +140,8 @@ button:focus-visible {
 
 .game-settings {
   display: grid;
+  flex: 1;
+  align-content: space-evenly;
   gap: 20px;
   padding: 0 0 20px;
 }
