@@ -1,52 +1,40 @@
-# Jogo da velha
+# Jogo da Velha
 
-Implementação do famoso jogo da velha utilizando jQuery.
-Essa versão permite criação de várias instancias do jogo em uma mesma tela.
+Jogo web de três em linha feito com React e Vite. É possível jogar em dupla ou contra o robô, com níveis fácil, médio e difícil.
 
-## Instalando pacotes
+## Executar localmente
 
-Antes de executar o jogo, é necessário instalar os módulos dependentes utilizando a ferramenta npm.
-
-`$ npm install`
-
-## Constante
-
-```
-#Tipo de usuário.
-#Será utilizado ao instanciar o jogo
-
-Tictactoe.USER;
-Tictactoe.COMPUTER_EASY;
-Tictactoe.COMPUTER_MEDIUM;
-Tictactoe.COMPUTER_HARD;
+```bash
+npm install
+npm run dev
 ```
 
-## Parâmetros de configuração
-De todos os parâmetros citados abaixo, apenas o 'target' é obrigatório.
-```
-{
-	'target': object, //Objeto DOM que receberá o jogo
-	'enemy': int,     //Constante que define o usuário
-	'view': class     //Classe que controlará a interface do jogo
-}
-```
+## Partidas
 
-## Criando uma instância do jogo
+O painel inicial serve para configurar e abrir partidas e ocupa a primeira posição da grade. Cada partida tem seu próprio tabuleiro e placar; as mais recentes aparecem antes das anteriores. Não há página de estatísticas nem ação de nova rodada.
 
+## Pacotes
+
+- `projects/main` (`@tictactoe/main`): regras, estado e eventos.
+- `projects/bot` (`@tictactoe/bot`): jogadas do robô.
+- `projects/game` (`@tictactoe/game`): interface React e integração GTM.
+
+## Google Tag Manager
+
+Copie `projects/game/.env.example` para `projects/game/.env` para ativar o GTM localmente. No provedor de deploy, configure `VITE_GTM_ID=GTM-KMTQTFL` antes do build. O identificador é público e incluído no HTML. O build exige um identificador válido; no servidor de desenvolvimento, sem ele, o GTM fica desativado e um aviso é exibido.
+
+## Acessibilidade
+
+Controles nativos de teclado, rótulos acessíveis para cada casa, anúncio de atualizações da partida para leitores de tela, foco visível e suporte à preferência por movimento reduzido.
+
+## Verificações
+
+```bash
+npm test
+npm run lint
+npm run build
 ```
-let enemy = Tictactoe.COMPUTER_HARD;
-let target = "#game_div";
-let game = new Tictactoe({
-	'target': target,
-	'enemy': enemy
-});
-
-game.start();
-```
-
-## Exemplo
-Veja um exemplo de implementação do jogo no arquivo [sample.html](https://github.com/lppjunior/tictactoe/blob/master/sample.html)
 
 ## Licença
 
-[MIT License](https://github.com/lppjunior/tictactoe/LICENSE.md) © [Luiz Paulo](http://lppjunior.com/)
+[MIT License](./LICENSE.md) © [Luiz Paulo](https://lppjunior.com/)

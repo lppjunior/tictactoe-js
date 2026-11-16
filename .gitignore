@@ -1,7 +1,9 @@
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+node_modules/
+coverage
+dist/
+.env
+.env.*
+!.env.example
 
 # testing
 /coverage
