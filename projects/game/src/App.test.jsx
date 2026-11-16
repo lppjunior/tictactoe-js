@@ -10,6 +10,7 @@ describe('game screen', () => {
     render(<App />)
 
     expect(screen.getByRole('heading', { name: 'Jogo da Velha' })).toBeTruthy()
+    expect(screen.getByText('lppjunior.com · Jogo da Velha')).toBeTruthy()
     expect(screen.queryByText(/três em linha/i)).toBeNull()
     expect(screen.getAllByRole('button', { name: 'JOGAR' })).toHaveLength(1)
     const setupPanel = screen.getByRole('complementary', {

@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   min-width: 320px;
   min-height: 100vh;
@@ -51,26 +55,27 @@ button:focus-visible {
 .game-layout {
   display: grid;
   width: calc(100% - 48px);
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(0, min(100%, 360px)));
   grid-auto-rows: 1fr;
   align-content: start;
   gap: 24px;
   margin: 0 auto;
-  padding: 54px 0 36px;
+  padding: 54px 0 60px;
 }
 
 .app--idle .game-layout {
   width: min(360px, calc(100% - 32px));
-  min-height: calc(100vh - 78px);
+  min-height: 100dvh;
   grid-template-columns: minmax(0, 1fr);
   grid-auto-rows: auto;
   align-content: center;
   justify-content: center;
-  padding-top: 30px;
+  padding: 18px 0 54px;
 }
 
 .setup-card,
 .game-card {
+  min-height: 500px;
   border: 1px solid rgba(62, 96, 120, 0.48);
   border-radius: 18px;
   background: var(--surface);
@@ -412,16 +417,20 @@ button:focus-visible {
 }
 
 .app-footer {
-  margin-top: auto;
-  padding: 0 24px 20px;
-  color: #839bae;
-  font-size: 9px;
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  min-height: 36px;
+  place-items: center;
+  padding: 8px 12px;
+  background: #07121e;
+  color: #a7bece;
+  font-size: 11px;
   text-align: center;
-}
-
-.app-footer span {
-  margin: 0 5px;
-  color: var(--cyan);
+  pointer-events: none;
 }
 
 @media (max-width: 860px) {
@@ -443,7 +452,7 @@ button:focus-visible {
 
   .app--idle .game-layout {
     width: min(360px, calc(100% - 28px));
-    min-height: calc(100vh - 62px);
+    min-height: 100dvh;
   }
 
   .setup-card {

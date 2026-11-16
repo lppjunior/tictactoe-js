@@ -257,7 +257,7 @@ export default function App () {
       <p aria-live='polite' className='visually-hidden' role='status'>
         {announcement}
       </p>
-      <footer className='app-footer'>LPPJUNIOR <span aria-hidden='true'>·</span> JOGO DA VELHA</footer>
+      <footer className='app-footer'>lppjunior.com · Jogo da Velha</footer>
     </div>
   )
 }
