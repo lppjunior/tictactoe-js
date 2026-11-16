@@ -10,7 +10,7 @@
     "projects/*"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace @tictactoe/game",
+    "dev": "npm run dev --workspace @tictactoe/game --",
     "build": "npm run test && npm run build --workspace @tictactoe/game",
     "test": "jest --runInBand && npm run test:gtm --workspace @tictactoe/game",
     "lint": "npm run lint --workspaces --if-present"
