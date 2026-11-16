@@ -11,7 +11,7 @@ npm run dev
 
 ## Partidas
 
-O painel inicial serve para configurar e abrir partidas. Cada partida tem seu próprio tabuleiro e placar; elas aparecem em sequência, antes do painel, que ocupa a próxima posição disponível na grade. Não há página de estatísticas nem ação de nova rodada.
+O painel inicial serve para configurar e abrir partidas e ocupa a primeira posição da grade. Cada partida tem seu próprio tabuleiro e placar; as mais recentes aparecem antes das anteriores. Não há página de estatísticas nem ação de nova rodada.
 
 ## Pacotes
 

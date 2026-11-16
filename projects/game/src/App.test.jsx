@@ -53,11 +53,11 @@ describe('game screen', () => {
     const main = screen.getByRole('main')
     const articles = within(main).getAllByRole('article')
     expect(articles.map((article) => article.getAttribute('aria-labelledby'))).toEqual([
-      'game-title-1',
-      'game-title-2'
+      'game-title-2',
+      'game-title-1'
     ])
-    expect(screen.getByRole('region', { name: 'Partidas abertas' }).compareDocumentPosition(
-      screen.getByRole('complementary', { name: 'Configuração de nova partida' })
+    expect(screen.getByRole('complementary', { name: 'Configuração de nova partida' }).compareDocumentPosition(
+      screen.getByRole('region', { name: 'Partidas abertas' })
     ) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
     expect(screen.queryByRole('button', { name: /nova rodada/i })).toBeNull()
   })
@@ -82,7 +82,7 @@ describe('game screen', () => {
     expect(screen.getByText('Vez de X')).toBeTruthy()
   })
 
-  test('keeps new games after the remaining games when a game is closed', () => {
+  test('places new games before the remaining games when a game is closed', () => {
     render(<App />)
     const play = screen.getByRole('button', { name: 'JOGAR' })
 
@@ -92,8 +92,8 @@ describe('game screen', () => {
     fireEvent.click(play)
 
     expect(screen.getAllByRole('article').map((article) => article.getAttribute('aria-labelledby'))).toEqual([
-      'game-title-2',
-      'game-title-3'
+      'game-title-3',
+      'game-title-2'
     ])
   })
 })

@@ -137,8 +137,8 @@ export default function App () {
 
     gameInstances.current.set(id, game)
     setGames((currentGames) => [
-      ...currentGames,
-      { id, mode, difficulty, state: copyState(game.getState()) }
+      { id, mode, difficulty, state: copyState(game.getState()) },
+      ...currentGames
     ])
     setAnnouncement(`Partida ${id} aberta. Vez de ${PLAYER.X}.`)
   }
@@ -177,20 +177,6 @@ export default function App () {
   return (
     <div className={`app ${isPlaying ? 'app--playing' : 'app--idle'}`}>
       <main className='game-layout'>
-        {isPlaying && (
-          <section aria-label='Partidas abertas' className='games-column'>
-            <h2 className='visually-hidden'>Partidas abertas</h2>
-            {games.map((game) => (
-              <GameCard
-                key={game.id}
-                game={game}
-                onClose={closeGame}
-                onMove={playMove}
-              />
-            ))}
-          </section>
-        )}
-
         <aside aria-label='Configuração de nova partida' className='setup-card'>
           <header className='brand'>
             <BrandMark />
@@ -253,6 +239,19 @@ export default function App () {
             Abra quantas partidas quiser — cada uma tem seu próprio placar.
           </p>
         </aside>
+        {isPlaying && (
+          <section aria-label='Partidas abertas' className='games-column'>
+            <h2 className='visually-hidden'>Partidas abertas</h2>
+            {games.map((game) => (
+              <GameCard
+                key={game.id}
+                game={game}
+                onClose={closeGame}
+                onMove={playMove}
+              />
+            ))}
+          </section>
+        )}
       </main>
 
       <p aria-live='polite' className='visually-hidden' role='status'>
