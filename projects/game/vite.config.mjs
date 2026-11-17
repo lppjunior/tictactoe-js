@@ -43,9 +43,23 @@ export default defineConfig(({ mode, command }) => {
     }
   }
 
+  const inlineCss = {
+    name: 'inline-css',
+    apply: 'build',
+    transformIndexHtml: {
+      order: 'post',
+      handler (html, { bundle }) {
+        return html.replace(/<link[^>]+href="\/(assets\/[^"]+\.css)"[^>]*>/, (tag, file) => {
+          const css = bundle?.[file]?.source
+          return css ? `<style>${css}</style>` : tag
+        })
+      }
+    }
+  }
+
   return {
     root,
-    plugins: [react(), gtm],
+    plugins: [react(), gtm, inlineCss],
     build: { outDir: resolve(root, '../../dist'), emptyOutDir: true }
   }
 })
