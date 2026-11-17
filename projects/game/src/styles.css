@@ -454,3 +454,10 @@ button:focus-visible {
     animation-iteration-count: 1 !important;
   }
 }
+
+.app-footer a {
+  display: inline-block;
+  padding: 4px 2px;
+  color: inherit;
+  pointer-events: auto;
+}
