@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tictactoe.lppjunior.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tictactoe.lppjunior.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tictactoe.lppjunior.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://tictactoe.lppjunior.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tictactoe.lppjunior.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tictactoe.lppjunior.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tictactoe.lppjunior.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tictactoe.lppjunior.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tictactoe.lppjunior.com/"/>
+  </url>
+  <url>
+    <loc>https://tictactoe.lppjunior.com/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tictactoe.lppjunior.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tictactoe.lppjunior.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://tictactoe.lppjunior.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tictactoe.lppjunior.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tictactoe.lppjunior.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tictactoe.lppjunior.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tictactoe.lppjunior.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tictactoe.lppjunior.com/"/>
+  </url>
+  <url>
+    <loc>https://tictactoe.lppjunior.com/hi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tictactoe.lppjunior.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tictactoe.lppjunior.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://tictactoe.lppjunior.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tictactoe.lppjunior.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tictactoe.lppjunior.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tictactoe.lppjunior.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tictactoe.lppjunior.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tictactoe.lppjunior.com/"/>
+  </url>
+  <url>
+    <loc>https://tictactoe.lppjunior.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tictactoe.lppjunior.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tictactoe.lppjunior.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://tictactoe.lppjunior.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tictactoe.lppjunior.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tictactoe.lppjunior.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tictactoe.lppjunior.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tictactoe.lppjunior.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tictactoe.lppjunior.com/"/>
+  </url>
+  <url>
+    <loc>https://tictactoe.lppjunior.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tictactoe.lppjunior.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tictactoe.lppjunior.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://tictactoe.lppjunior.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tictactoe.lppjunior.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tictactoe.lppjunior.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tictactoe.lppjunior.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tictactoe.lppjunior.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tictactoe.lppjunior.com/"/>
+  </url>
+  <url>
+    <loc>https://tictactoe.lppjunior.com/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tictactoe.lppjunior.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tictactoe.lppjunior.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://tictactoe.lppjunior.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tictactoe.lppjunior.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tictactoe.lppjunior.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tictactoe.lppjunior.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tictactoe.lppjunior.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tictactoe.lppjunior.com/"/>
+  </url>
+  <url>
+    <loc>https://tictactoe.lppjunior.com/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tictactoe.lppjunior.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tictactoe.lppjunior.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://tictactoe.lppjunior.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tictactoe.lppjunior.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tictactoe.lppjunior.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tictactoe.lppjunior.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tictactoe.lppjunior.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tictactoe.lppjunior.com/"/>
   </url>
 </urlset>

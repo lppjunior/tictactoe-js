@@ -16,5 +16,6 @@ module.exports = {
     }
   },
   maxWorkers: '50%',
+  transform: { '^.+\\.m?[jt]sx?$': 'babel-jest' },
   transformIgnorePatterns: ['node_modules/(?!@lppjunior/pattern-js/)']
 }

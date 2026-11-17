@@ -2,12 +2,18 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import chooseMove from '@tictactoe/bot'
 import Tictactoe, { PLAYER, STATUS } from '@tictactoe/main'
+import {
+  LANGUAGES,
+  LANGUAGE_NAMES,
+  HTML_LANG,
+  LANGUAGE_PATHS,
+  RTL_LANGUAGES,
+  MESSAGES,
+  languageFromPath,
+  storeLanguage
+} from './i18n.mjs'
 
-const DIFFICULTIES = [
-  { value: 'easy', label: 'Fácil' },
-  { value: 'medium', label: 'Médio' },
-  { value: 'hard', label: 'Difícil' }
-]
+const DIFFICULTIES = ['easy', 'medium', 'hard']
 
 function copyState (state) {
   return {
@@ -25,11 +31,11 @@ function getScores (state) {
   }
 }
 
-function getStatusLabel (state) {
+function getStatusLabel (state, t) {
   if (state.status === STATUS.PLAYING) {
-    return `Vez de ${state.currentPlayer === 0 ? PLAYER.X : PLAYER.O}`
+    return t.turn(state.currentPlayer === 0 ? PLAYER.X : PLAYER.O)
   }
-  return state.winner ? `${state.winner} venceu!` : 'Deu velha!'
+  return state.winner ? t.won(state.winner) : t.draw
 }
 
 function BrandMark () {
@@ -48,7 +54,24 @@ function BrandMark () {
   )
 }
 
-function GameCard ({ game, onMove, onClose }) {
+function LanguageSwitcher ({ lang, onChange, t }) {
+  return (
+    <select
+      aria-label={t.language}
+      className='language-switcher'
+      onChange={event => onChange(event.target.value)}
+      value={lang}
+    >
+      {LANGUAGES.map(code => (
+        <option key={code} lang={code} value={code}>
+          {LANGUAGE_NAMES[code]}
+        </option>
+      ))}
+    </select>
+  )
+}
+
+function GameCard ({ game, onMove, onClose, t }) {
   const { id, mode, state } = game
   const scores = getScores(state)
   const finished = state.status === STATUS.FINISHED
@@ -58,14 +81,14 @@ function GameCard ({ game, onMove, onClose }) {
       <header className='game-card-header'>
         <div>
           <h2 id={`game-title-${id}`} className='game-card-title'>
-            Partida #{id}
+            {t.gameTitle(id)}
           </h2>
           <p className='game-mode-label'>
-            {mode === 'computer' ? '1 jogador + robô' : '2 jogadores'}
+            {mode === 'computer' ? t.modeComputer : t.modePlayers}
           </p>
         </div>
         <button
-          aria-label={`Fechar partida ${id}`}
+          aria-label={t.closeGame(id)}
           className='icon-button close-game'
           onClick={() => onClose(id)}
           type='button'
@@ -76,21 +99,21 @@ function GameCard ({ game, onMove, onClose }) {
 
       <div className='game-card-content'>
         <p className='game-status'>
-          {getStatusLabel(state)}
+          {getStatusLabel(state, t)}
         </p>
         <p
           className='game-score'
-          aria-label={`Placar: X ${scores.x}, velhas ${scores.draws}, O ${scores.o}`}
+          aria-label={t.scoreLabel(scores.x, scores.draws, scores.o)}
         >
           <span className='score-x'>X {scores.x}</span>
           <span aria-hidden='true'>·</span>
-          <span>Velha {scores.draws}</span>
+          <span>{t.drawsShort} {scores.draws}</span>
           <span aria-hidden='true'>·</span>
           <span className='score-o'>O {scores.o}</span>
         </p>
 
         <div
-          aria-label={`Tabuleiro da partida ${id}`}
+          aria-label={t.boardLabel(id)}
           className='board'
           role='group'
         >
@@ -101,7 +124,7 @@ function GameCard ({ game, onMove, onClose }) {
             return (
               <button
                 key={position}
-                aria-label={`Partida ${id}, linha ${rowIndex + 1}, coluna ${colIndex + 1}: ${cell || 'vazia'}`}
+                aria-label={t.cell(id, rowIndex + 1, colIndex + 1, cell)}
                 className={[
                   'board-cell',
                   cell ? `board-cell--${cell.toLowerCase()}` : '',
@@ -121,7 +144,7 @@ function GameCard ({ game, onMove, onClose }) {
   )
 }
 
-export default function App () {
+function App ({ lang, onLanguageChange, t }) {
   const [mode, setMode] = useState('players')
   const [difficulty, setDifficulty] = useState('medium')
   const [games, setGames] = useState([])
@@ -140,13 +163,13 @@ export default function App () {
       { id, mode, difficulty, state: copyState(game.getState()) },
       ...currentGames
     ])
-    setAnnouncement(`Partida ${id} aberta. Vez de ${PLAYER.X}.`)
+    setAnnouncement(t.opened(id, PLAYER.X))
   }
 
   function closeGame (id) {
     gameInstances.current.delete(id)
     setGames((currentGames) => currentGames.filter((game) => game.id !== id))
-    setAnnouncement(`Partida ${id} fechada.`)
+    setAnnouncement(t.closed(id))
   }
 
   function playMove (id, position) {
@@ -169,7 +192,7 @@ export default function App () {
     setGames((currentGames) => currentGames.map((item) => (
       item.id === id ? { ...item, state: nextState } : item
     )))
-    setAnnouncement(`Partida ${id}: ${getStatusLabel(nextState)}.`)
+    setAnnouncement(t.moveAnnouncement(id, getStatusLabel(nextState, t)))
   }
 
   const isPlaying = games.length > 0
@@ -177,20 +200,21 @@ export default function App () {
   return (
     <div className={`app ${isPlaying ? 'app--playing' : 'app--idle'}`}>
       <main className='game-layout'>
-        <aside aria-label='Configuração de nova partida' className='setup-card'>
+        <aside aria-label={t.setupLabel} className='setup-card'>
           <header className='brand'>
             <BrandMark />
             <div>
               <h1 className='brand-title'>
-                <span>Jogo da</span>
-                <span className='brand-title-accent'>Velha</span>
+                <span>{t.titleTop}</span>
+                <span className='brand-title-accent'>{t.titleBottom}</span>
               </h1>
             </div>
+            <LanguageSwitcher lang={lang} onChange={onLanguageChange} t={t} />
           </header>
 
           <div className='game-settings'>
             <fieldset className='setting-group'>
-              <legend>Modo de jogo</legend>
+              <legend>{t.modeLegend}</legend>
               <div className='mode-options'>
                 <button
                   aria-pressed={mode === 'players'}
@@ -199,7 +223,7 @@ export default function App () {
                   type='button'
                 >
                   <span aria-hidden='true' className='option-icon'>2P</span>
-                  2 jogadores
+                  {t.modePlayers}
                 </button>
                 <button
                   aria-pressed={mode === 'computer'}
@@ -208,15 +232,15 @@ export default function App () {
                   type='button'
                 >
                   <span aria-hidden='true' className='option-icon'>AI</span>
-                  Contra robô
+                  {t.vsRobot}
                 </button>
               </div>
             </fieldset>
 
             <fieldset className='setting-group' disabled={mode !== 'computer'}>
-              <legend>Dificuldade do robô</legend>
+              <legend>{t.difficultyLegend}</legend>
               <div className='difficulty-options'>
-                {DIFFICULTIES.map(({ value, label }) => (
+                {DIFFICULTIES.map((value) => (
                   <button
                     key={value}
                     aria-pressed={difficulty === value}
@@ -224,7 +248,7 @@ export default function App () {
                     onClick={() => setDifficulty(value)}
                     type='button'
                   >
-                    {label}
+                    {t.difficulties[value]}
                   </button>
                 ))}
               </div>
@@ -233,21 +257,22 @@ export default function App () {
 
           <button className='open-game-button' onClick={openGame} type='button'>
             <span aria-hidden='true'>▶</span>
-            JOGAR
+            {t.play}
           </button>
           <p className='setup-hint'>
-            Abra quantas partidas quiser — cada uma tem seu próprio placar.
+            {t.hint}
           </p>
         </aside>
         {isPlaying && (
-          <section aria-label='Partidas abertas' className='games-column'>
-            <h2 className='visually-hidden'>Partidas abertas</h2>
+          <section aria-label={t.openGames} className='games-column'>
+            <h2 className='visually-hidden'>{t.openGames}</h2>
             {games.map((game) => (
               <GameCard
                 key={game.id}
                 game={game}
                 onClose={closeGame}
                 onMove={playMove}
+                t={t}
               />
             ))}
           </section>
@@ -257,7 +282,34 @@ export default function App () {
       <p aria-live='polite' className='visually-hidden' role='status'>
         {announcement}
       </p>
-      <footer className='app-footer'><a href='https://lppjunior.com/'>lppjunior.com</a> · Jogo da Velha</footer>
+      <footer className='app-footer'><a href='https://lppjunior.com/'>lppjunior.com</a> · {t.gameName}</footer>
     </div>
   )
+}
+
+export default function AppWithLanguage () {
+  const [lang, setLang] = useState(() => languageFromPath(window.location.pathname))
+  const t = MESSAGES[lang]
+
+  useEffect(() => {
+    document.documentElement.lang = HTML_LANG[lang]
+    document.documentElement.dir = RTL_LANGUAGES.includes(lang) ? 'rtl' : 'ltr'
+    document.title = t.title
+  }, [lang, t])
+
+  useEffect(() => {
+    const syncLanguage = () => setLang(languageFromPath(window.location.pathname))
+    window.addEventListener('popstate', syncLanguage)
+
+    return () => window.removeEventListener('popstate', syncLanguage)
+  }, [])
+
+  function changeLanguage (next) {
+    if (next === lang) return
+    storeLanguage(window.localStorage, next)
+    window.history.pushState(null, '', LANGUAGE_PATHS[next])
+    setLang(next)
+  }
+
+  return <App lang={lang} onLanguageChange={changeLanguage} t={t} />
 }

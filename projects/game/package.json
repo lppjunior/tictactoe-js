@@ -6,8 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "test": "jest --config ../../jest.config.js --runInBand --coverage=false --runTestsByPath src/App.test.jsx && npm run test:gtm",
-    "test:gtm": "node --test tests/gtm.test.mjs",
-    "lint": "standard src tests/gtm.test.mjs vite.config.mjs"
+    "test:gtm": "node --test tests/gtm.test.mjs tests/i18n.test.mjs",
+    "lint": "standard src tests/gtm.test.mjs tests/i18n.test.mjs vite.config.mjs"
   },
   "dependencies": {
     "@tictactoe/bot": "0.0.3",

@@ -5,6 +5,11 @@ import { fireEvent, render, screen, within } from '@testing-library/react'
 
 import App from './App'
 
+beforeEach(() => {
+  window.localStorage.clear()
+  window.history.pushState(null, '', '/pt/')
+})
+
 describe('game screen', () => {
   test('starts with the new game panel and no global statistics', () => {
     render(<App />)
@@ -96,5 +101,21 @@ describe('game screen', () => {
       'game-title-3',
       'game-title-2'
     ])
+  })
+
+  test('switches the language, URL and document metadata', () => {
+    window.history.pushState(null, '', '/')
+    render(<App />)
+
+    expect(screen.getByRole('button', { name: 'PLAY' })).toBeTruthy()
+    expect(document.documentElement.lang).toBe('en')
+    fireEvent.change(screen.getByRole('combobox', { name: 'Language' }), {
+      target: { value: 'ar' }
+    })
+
+    expect(window.location.pathname).toBe('/ar/')
+    expect(document.documentElement.dir).toBe('rtl')
+    expect(window.localStorage.getItem('tictactoe.language.v1')).toBe('ar')
+    expect(screen.getByRole('button', { name: 'العب' })).toBeTruthy()
   })
 })

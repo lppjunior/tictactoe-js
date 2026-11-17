@@ -82,8 +82,21 @@ button:focus-visible {
 .brand {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 14px;
   margin-bottom: 23px;
+}
+
+.language-switcher {
+  min-height: 32px;
+  margin-left: auto;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-raised);
+  color: #e8f0f7;
+  font: inherit;
+  font-size: 13px;
 }
 
 .brand-mark {
@@ -347,6 +360,7 @@ button:focus-visible {
 }
 
 .board {
+  direction: ltr;
   display: grid;
   width: min(100%, 330px);
   aspect-ratio: 1;
