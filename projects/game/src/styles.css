@@ -412,9 +412,13 @@ button:focus-visible {
   right: 0;
   bottom: 0;
   left: 0;
-  display: grid;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  white-space: nowrap;
   min-height: 36px;
-  place-items: center;
   padding: 8px 12px;
   background: #07121e;
   color: #a7bece;
